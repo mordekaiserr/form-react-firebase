@@ -6,12 +6,12 @@ import "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyA5gHYZocaryT6JaK5eg6_aTlcdol2ir64",
-  authDomain: "form-react-waves.firebaseapp.com",
-  projectId: "form-react-waves",
-  storageBucket: "form-react-waves.appspot.com",
-  messagingSenderId: "525083052101",
-  appId: "1:525083052101:web:c3022a065f037497d3bb2c",
+  apiKey: "AIzaSyDyrpoL-dOmi25ECs4tQuBrEhehjMOhZSk",
+  authDomain: "ventas-db2b6.firebaseapp.com",
+  projectId: "ventas-db2b6",
+  storageBucket: "ventas-db2b6.appspot.com",
+  messagingSenderId: "733849229605",
+  appId: "1:733849229605:web:167b1ad5725b3c1b8ca2cc",
 };
 
 // Initialize Firebase

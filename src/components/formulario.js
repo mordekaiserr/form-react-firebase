@@ -16,22 +16,22 @@ const Formulario = () => {
   const [error, setError] = React.useState(null);
   const [id, setId] = React.useState("");
 
-  // React.useEffect(() => {
-  //   const obtenerDatos = async () => {
-  //     try {
-  //       const db = firebase.firestore();
-  //       const data = await db.collection("ventas").get();
-  //       const array = data.docs.map((item) => ({
-  //         id: item.id,
-  //         ...item.data(),
-  //       }));
-  //       setLista(array);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-  //   obtenerDatos();
-  // });
+  React.useEffect(() => {
+    const obtenerDatos = async () => {
+      try {
+        const db = firebase.firestore();
+        const data = await db.collection("ventas").get();
+        const array = data.docs.map((item) => ({
+          id: item.id,
+          ...item.data(),
+        }));
+        setLista(array);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    obtenerDatos();
+  });
 
   const guardarDatos = async (e) => {
     console.log("resgistro", registro);
@@ -157,7 +157,7 @@ const Formulario = () => {
           <h4 className="text-center">Listado de Ventas</h4>
           <ul className="list-group">
             {lista.map((item) => (
-              <li className="list-group-item" key={item.id}>
+              <li className="list-group-item bg-info" key={item.id}>
                 <span className="lead">
                   {item.nombre} - {item.descripcion} - {item.unidades} -{" "}
                   {item.codigoBarra} -{" "}
@@ -187,7 +187,7 @@ const Formulario = () => {
           <form onSubmit={modoEdicion ? editar : guardarDatos}>
             {error ? <span className="text-danger">{error}</span> : null}
             <input
-              className="form-control mb-2"
+              className="form-control mb-2 bg-info"
               type="text"
               placeholder="Ingrese nombre"
               onChange={(e) =>
@@ -196,7 +196,7 @@ const Formulario = () => {
               value={registro.nombre}
             />
             <input
-              className="form-control mb-2"
+              className="form-control mb-2 bg-info"
               type="text"
               placeholder="Ingrese descripcion"
               onChange={(e) =>
@@ -205,7 +205,7 @@ const Formulario = () => {
               value={registro.descripcion}
             />
             <input
-              className="form-control mb-2"
+              className="form-control mb-2 bg-info"
               type="number"
               placeholder="Ingrese unidades"
               onChange={(e) =>
@@ -214,7 +214,7 @@ const Formulario = () => {
               value={registro.unidades}
             />
             <input
-              className="form-control mb-2"
+              className="form-control mb-2 bg-info"
               type="text"
               placeholder="Ingrese codigoBarra"
               onChange={(e) =>
@@ -243,7 +243,7 @@ const Formulario = () => {
               </label>
             </div>
             <input
-              className="form-control mb-2"
+              className="form-control mb-2 bg-info"
               type="number"
               placeholder="Ingrese precio"
               onChange={(e) =>
@@ -252,7 +252,7 @@ const Formulario = () => {
               value={registro.precio}
             />
             <input
-              className="form-control mb-2"
+              className="form-control mb-2 bg-info"
               type="text"
               placeholder="Ingrese material"
               onChange={(e) =>
